@@ -20,7 +20,7 @@ use_test_data = False
 save_file = True
 # save_file = False
 print_logs = True
-pretty_print = True
+pretty_print = False
 exit_on_fetch_error = False
 exit_on_save_error = False
 exit_on_report_error = False
@@ -49,6 +49,8 @@ def fetch(url, method="GET", payload={}, headers={}, retries=2, delay=0, retry_d
         response = {"status": r.status_code, "attempts": response["attempts"], "data": r.json()}
       elif data_type == "xml":
         response = {"status": r.status_code, "attempts": response["attempts"], "data": xml2json(r.text)}
+      elif data_type == "yaml" or data_type == "yml":
+        response = {"status": r.status_code, "attempts": response["attempts"], "data": yaml.safe_load(r.content.decode("utf-8"))}
       elif data_type == "text":
         response = {"status": r.status_code, "attempts": response["attempts"], "data": r.text}
       else:
@@ -112,6 +114,8 @@ def read_file(rel_path, file_type="json", context=""):
         response = json.load(f)
       elif file_type == "yaml":
         response = yaml.safe_load(f)
+      elif file_type == "text":
+        response = f.read()
       f.close()
       return response
   except:
