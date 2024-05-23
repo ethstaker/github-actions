@@ -30,6 +30,13 @@ jobs:
 
     - name: Run Python script
       run: python _scripts/collect_data.py
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        SHEETS_URL: ${{ secrets.SHEETS_URL }}
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        ERROR_DISCORD_WEBHOOK: ${{ secrets.ERROR_DISCORD_WEBHOOK }}
+        JOB_LISTINGS_URL: ${{ secrets.JOB_LISTINGS_URL }}
+        FOR_HIRE_LISTINGS_URL: ${{ secrets.FOR_HIRE_LISTINGS_URL }}
       
     - name: Commit and push changes
       env:

@@ -1,4 +1,8 @@
 *~
+_scripts/.env
+__pycache__
+_scripts/__pycache__
+**/__pycache__
 _site
 .sass-cache
 .jekyll-cache

@@ -55,11 +55,10 @@ def check_hardware_availability():
     save_unavailable_products_data(updated_unavailable_products)
   else: 
     error = f"Bad response"
-    utilities.log(f"{error}: {metric_id}_{data_source}")
+    utilities.log(f"{error}: {script_id}")
     utilities.report_error(error, context=f"{script_id}__check_hardware_availability")
     return
 
 
-check_hardware_availability()
 
 

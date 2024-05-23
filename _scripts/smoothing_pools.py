@@ -68,7 +68,7 @@ def update_smoothing_pool_data():
     save_smoothing_pool_data(smooth_subs, smoothly_subs)
   else: 
     error = f"Bad response"
-    utilities.log(f"{error}: {metric_id}_{data_source}")
+    utilities.log(f"{error}: {script_id}")
     utilities.report_error(error, context=f"{script_id}__update_smoothing_pool_data")
     return
 

@@ -1,7 +1,11 @@
+import sys
+sys.dont_write_bytecode = True
+
 import requests
 import os
 import time
 import json
+import base64
 import yaml
 import xmltodict
 import pprint
@@ -29,7 +33,13 @@ error_count = 0
 
 
 load_dotenv()
-# GOOGLE_FORM_ERROR_REPORT_URL = os.environ.get("GOOGLE_FORM_ERROR_REPORT_URL")
+# reference: https://stackoverflow.com/a/74584151/4462930
+GOOGLE_CREDENTIALS = json.loads(base64.b64decode(str(os.environ.get("GOOGLE_CREDENTIALS"))[2:-1]).decode('utf-8'))
+SHEETS_URL = os.environ.get("SHEETS_URL")
+DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK")
+ERROR_DISCORD_WEBHOOK = os.environ.get("ERROR_DISCORD_WEBHOOK")
+JOB_LISTINGS_URL = os.environ.get("JOB_LISTINGS_URL")
+FOR_HIRE_LISTINGS_URL = os.environ.get("FOR_HIRE_LISTINGS_URL")
 
 
 
@@ -108,7 +118,6 @@ def read_file(rel_path, file_type="json", context=""):
     rel_path = "/" + rel_path
   abs_path = os.path.abspath(__file__ + "/../../") + rel_path
   try:
-    print(abs_path)
     with open(abs_path, 'r') as f:
       if file_type == "json":
         response = json.load(f)
@@ -134,24 +143,24 @@ def xml2json(xml):
 def report_error(error, context=""):
   global error_count
   error_count += 1
-  # error_count = error_count + 1
+  if context == "":
+      msg = f"{error}"
+  else:
+    msg = f"{context}: {error}"
+  print(msg)
   if use_test_data and not submit_error:
     return
   else:
-    data = {
-      # "entry.2112281434": "name",    # text
-      # "entry.1600556346": "option3", # dropdown
-      # "entry.819260047": ["option2", "option3"], #checkbox multiple
-      # "entry.1682233942": "option5"  # checkbox single
-      "entry.1558275967": error,
-      "entry.2071911865": context
-    }
+    data = {"content": msg}
+    attempts = 0
+    status = 0
     try:
-      # requests.post(GOOGLE_FORM_ERROR_REPORT_URL, data)
-      print("Error submitted")
-    except:
+      while (attempts < 3) and (status < 200 or status >= 300):
+        attempts += 1
+        r = requests.post(ERROR_DISCORD_WEBHOOK, json=data)
+        status = r.status_code
+    except Exception as error:
       error_count += 1
-      error = f"ERROR: {context} error"
       if exit_on_report_error:
         raise SystemExit(error)
       else:
@@ -182,5 +191,21 @@ def log(data, context=None):
 def pprint(data):
   pp.pprint(data)
 
+
+def sendDiscordMsg(msg):
+  data = {"content": msg}
+  attempts = 0
+  status = 0
+  try:
+    while (attempts < 3) and (status < 200 or status >= 300):
+      attempts += 1
+      r = requests.post(DISCORD_WEBHOOK, json=data)
+      status = r.status_code
+  except Exception as error:
+    report_error(error, f"sendDiscordMsg: {msg}")
+    if exit_on_report_error:
+      raise SystemExit(error)
+    else:
+      print(error)
 
 
