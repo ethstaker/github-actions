@@ -43,6 +43,9 @@ def process_hardware_data(hardware_data, unavailable_products):
   return updated_unavailable_products
 
 def save_unavailable_products_data(updated_unavailable_products):
+  if len(updated_unavailable_products) > 0:
+    msg = f"Hardware unavailable: {updated_unavailable_products}"
+    utilities.sendDiscordMsg(utilities.DISCORD_WEBSITE_WEBHOOK, msg)
   utilities.save_to_file(f"_data/hardware-unavailable.txt", updated_unavailable_products, context=f"{script_id}__save_unavailable_products_data")
 
 
