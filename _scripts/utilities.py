@@ -36,8 +36,8 @@ load_dotenv()
 # reference: https://stackoverflow.com/a/74584151/4462930
 GOOGLE_CREDENTIALS = json.loads(base64.b64decode(str(os.environ.get("GOOGLE_CREDENTIALS"))[2:-1]).decode('utf-8'))
 SHEETS_URL = os.environ.get("SHEETS_URL")
-DISCORD_WEBHOOK = os.environ.get("DISCORD_WEBHOOK")
-ERROR_DISCORD_WEBHOOK = os.environ.get("ERROR_DISCORD_WEBHOOK")
+DISCORD_WEBSITE_WEBHOOK = os.environ.get("DISCORD_WEBSITE_WEBHOOK")
+DISCORD_JOB_LISTINGS_WEBHOOK = os.environ.get("DISCORD_JOB_LISTINGS_WEBHOOK")
 JOB_LISTINGS_URL = os.environ.get("JOB_LISTINGS_URL")
 FOR_HIRE_LISTINGS_URL = os.environ.get("FOR_HIRE_LISTINGS_URL")
 
@@ -157,7 +157,7 @@ def report_error(error, context=""):
     try:
       while (attempts < 3) and (status < 200 or status >= 300):
         attempts += 1
-        r = requests.post(ERROR_DISCORD_WEBHOOK, json=data)
+        r = requests.post(DISCORD_WEBSITE_WEBHOOK, json=data)
         status = r.status_code
     except Exception as error:
       error_count += 1
@@ -192,14 +192,14 @@ def pprint(data):
   pp.pprint(data)
 
 
-def sendDiscordMsg(msg):
+def sendDiscordMsg(webhook, msg):
   data = {"content": msg}
   attempts = 0
   status = 0
   try:
     while (attempts < 3) and (status < 200 or status >= 300):
       attempts += 1
-      r = requests.post(DISCORD_WEBHOOK, json=data)
+      r = requests.post(webhook, json=data)
       status = r.status_code
   except Exception as error:
     report_error(error, f"sendDiscordMsg: {msg}")
