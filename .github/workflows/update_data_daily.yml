@@ -33,8 +33,8 @@ jobs:
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
         SHEETS_URL: ${{ secrets.SHEETS_URL }}
-        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        ERROR_DISCORD_WEBHOOK: ${{ secrets.ERROR_DISCORD_WEBHOOK }}
+        DISCORD_WEBSITE_WEBHOOK: ${{ secrets.DISCORD_WEBSITE_WEBHOOK }}
+        DISCORD_JOB_LISTINGS_WEBHOOK: ${{ secrets.DISCORD_JOB_LISTINGS_WEBHOOK }}
         JOB_LISTINGS_URL: ${{ secrets.JOB_LISTINGS_URL }}
         FOR_HIRE_LISTINGS_URL: ${{ secrets.FOR_HIRE_LISTINGS_URL }}
       
