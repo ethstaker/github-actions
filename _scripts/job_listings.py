@@ -31,20 +31,20 @@ def process_listing_data(raw_data):
 
   # reformat and create lists of approved and new listings
   for row in raw_data:
+    entry = {
+      "id": row["Id"],
+      "epoch": utilities.current_time,
+      "name": row["Name"],
+      "position": row["Position"],
+      "description": row["Description"],
+      "comp": row["Compensation"],
+      "location": row["Location"],
+      "location_details": row["Location Details"],
+      "type": row["Type"],
+      "description_link": row["Description Link"],
+      "apply": row["Application"]
+    }
     if row["Approved"] == "TRUE":
-      entry = {
-        "id": row["Id"],
-        "epoch": utilities.current_time,
-        "name": row["Name"],
-        "position": row["Position"],
-        "description": row["Description"],
-        "comp": row["Compensation"],
-        "location": row["Location"],
-        "location_details": row["Location Details"],
-        "type": row["Type"],
-        "description_link": row["Description Link"],
-        "apply": row["Application"]
-      }
       approved_listings.append(entry)
     elif row["Approved"] == "":
       new_listing_submissions.append(entry)

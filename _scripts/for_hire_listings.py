@@ -31,21 +31,21 @@ def process_listing_data(raw_data):
 
   # reformat and create lists of approved and new listings
   for row in raw_data:
+    entry = {
+      "id": row["Id"],
+      "epoch": utilities.current_time,
+      "name": row["Name"],
+      "position": row["Position"],
+      "location": row["Location"],
+      "work_location": row["Work Location"],
+      "about": row["About"],
+      "type": row["Type"],
+      "resume": row["Resume"],
+      "cover": row["Cover"],
+      "github": row["Github"],
+      "email": row["Email"]
+    }
     if row["Approved"] == "TRUE":
-      entry = {
-        "id": row["Id"],
-        "epoch": utilities.current_time,
-        "name": row["Name"],
-        "position": row["Position"],
-        "location": row["Location"],
-        "work_location": row["Work Location"],
-        "about": row["About"],
-        "type": row["Type"],
-        "resume": row["Resume"],
-        "cover": row["Cover"],
-        "github": row["Github"],
-        "email": row["Email"]
-      }
       approved_listings.append(entry)
     elif row["Approved"] == "":
       new_listing_submissions.append(entry)
@@ -130,4 +130,4 @@ def update_for_hire_listings():
     utilities.log(f"{error}: {script_id}")
     utilities.report_error(error, context=f"{script_id}__update_for_hire_listings")
 
-update_for_hire_listings()
+
