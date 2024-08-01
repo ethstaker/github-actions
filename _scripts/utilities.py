@@ -193,19 +193,22 @@ def pprint(data):
 
 
 def sendDiscordMsg(webhook, msg):
-  data = {"content": msg}
-  attempts = 0
-  status = 0
-  try:
-    while (attempts < 3) and (status < 200 or status >= 300):
-      attempts += 1
-      r = requests.post(webhook, json=data)
-      status = r.status_code
-  except Exception as error:
-    report_error(error, f"sendDiscordMsg: {msg}")
-    if exit_on_report_error:
-      raise SystemExit(error)
-    else:
-      print(error)
+  if use_test_data:
+    print(msg)
+  else:
+    data = {"content": msg}
+    attempts = 0
+    status = 0
+    try:
+      while (attempts < 3) and (status < 200 or status >= 300):
+        attempts += 1
+        r = requests.post(webhook, json=data)
+        status = r.status_code
+    except Exception as error:
+      report_error(error, f"sendDiscordMsg: {msg}")
+      if exit_on_report_error:
+        raise SystemExit(error)
+      else:
+        print(error)
 
 
