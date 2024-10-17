@@ -123,6 +123,8 @@ def read_file(rel_path, file_type="json", context=""):
         response = json.load(f)
       elif file_type == "yaml":
         response = yaml.safe_load(f)
+      elif file_type == "xml":
+        response = f.read()
       elif file_type == "text":
         response = f.read()
       f.close()
@@ -180,6 +182,7 @@ def print_path(rel_path):
 
 
 def log(data, context=None):
+  print("\n")
   if context:
     print(f"{context}:")
   if pretty_print:
