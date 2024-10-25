@@ -115,7 +115,7 @@ def process_listing_data(raw_data):
     for listing in newly_expired_listings:
       ids.append(listing["id"])
     msg = f"[{len(newly_expired_listings)} expired for-hire listing{plural}](<{utilities.FOR_HIRE_LISTINGS_URL}>): {', '.join(ids)}"
-    utilities.sendDiscordMsg(utilities.DISCORD_WEBSITE_WEBHOOK, msg)
+    # utilities.sendDiscordMsg(utilities.DISCORD_WEBSITE_WEBHOOK, msg)
   utilities.log(approved_listings, context=f"{script_id}__process_listing_data")
   return approved_listings
 
