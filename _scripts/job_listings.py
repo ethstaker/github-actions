@@ -57,11 +57,13 @@ def process_listing_data(raw_data):
       newly_expired_listings.append(listing)
 
   # create list of newly approved listings
+  # set epoch time if approved listing is a current listing
   for approved_listing in approved_listings:
     is_new_listing = True
     for current_listing in current_listings:
       if approved_listing["id"] == current_listing["id"]:
         is_new_listing = False
+        approved_listing["epoch"] = current_listing["epoch"]
     if is_new_listing:
       newly_approved_listings.append(approved_listing)
 
