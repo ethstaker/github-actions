@@ -86,33 +86,33 @@ def process_listing_data(raw_data):
   # utilities.log(len(newly_expired_listings), context=f"{script_id}__newly_expired_listings_count")
 
   # send discord ping for new listings
-  for listing in newly_approved_listings:
-    name = f"**{listing['name'].strip()}**"
-    position = f"*{listing['position'].strip().title()}*"
-    role_type = f"{listing['type'].strip()}"
-    work_location = f"{listing['work_location'].strip()}"
-    location = ""
-    if listing["work_location"] != "Remote":
-      location = f"Location: {listing['location'].strip().lower()}\n"
-    about = ""
-    if listing["about"]:
-      about = f"> {listing['about'].strip()}\n"
-    if 
-    links = f"[Resume]({listing['resume']})"
-    if listing["cover"]:
-      links += f"  |  [Cover]({listing['cover'].strip()})"
-    if listing["github"]:
-      links += f"  |  [Github]({listing['github'].strip()})"
-    contact = f"Contact: {listing['email'].strip()}"
-    msg = "\n".join((
-      f"{name}  ({position})",
-      f"{role_type}  |  {work_location}",
-      f"{location}",
-      f"{about}",
-      f"{links}",
-      f"",
-      f"{contact}"
-      f"\n---------------------------------"))
+  # for listing in newly_approved_listings:
+  #   name = f"**{listing['name'].strip()}**"
+  #   position = f"*{listing['position'].strip().title()}*"
+  #   role_type = f"{listing['type'].strip()}"
+  #   work_location = f"{listing['work_location'].strip()}"
+  #   location = ""
+  #   if listing["work_location"] != "Remote":
+  #     location = f"Location: {listing['location'].strip().lower()}\n"
+  #   about = ""
+  #   if listing["about"]:
+  #     about = f"> {listing['about'].strip()}\n"
+  #   if 
+  #   links = f"[Resume]({listing['resume']})"
+  #   if listing["cover"]:
+  #     links += f"  |  [Cover]({listing['cover'].strip()})"
+  #   if listing["github"]:
+  #     links += f"  |  [Github]({listing['github'].strip()})"
+  #   contact = f"Contact: {listing['email'].strip()}"
+  #   msg = "\n".join((
+  #     f"{name}  ({position})",
+  #     f"{role_type}  |  {work_location}",
+  #     f"{location}",
+  #     f"{about}",
+  #     f"{links}",
+  #     f"",
+  #     f"{contact}"
+  #     f"\n---------------------------------"))
     # utilities.sendDiscordMsg(utilities.DISCORD_FOR_HIRE_LISTINGS_WEBHOOK, msg)
 
   # send discord ping for new listing submissions
