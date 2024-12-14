@@ -13,7 +13,7 @@ def get_blog_data():
     return response
   else:
     url = "https://paragraph.xyz/api/blogs/rss/@ethstaker"
-    response = utilities.fetch(url, "GET", data_type="xml", context=f"{script_id}__get_blog_data")
+    response = utilities.fetch(url, "GET", data_type="text", context=f"{script_id}__get_blog_data")
     return response
 
 def process_blog_data(blog_data):
