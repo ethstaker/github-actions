@@ -4,7 +4,7 @@
         <title>ethstaker</title>
         <link>https://paragraph.xyz/@ethstaker</link>
         <description>Ethereum staking info &amp; education </description>
-        <lastBuildDate>Fri, 14 Feb 2025 00:47:44 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 14 Feb 2025 14:31:43 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -14,6 +14,15 @@
             <link>https://paragraph.xyz/@ethstaker</link>
         </image>
         <copyright>All rights reserved</copyright>
+        <item>
+            <title><![CDATA[Ethereum Solo Staker List Handover to EthStaker]]></title>
+            <link>https://paragraph.xyz/@ethstaker/ethereum-solo-staker-list-handover-to-ethstaker</link>
+            <guid>8VFMEzmjY0IRseuPzKDZ</guid>
+            <pubDate>Fri, 14 Feb 2025 14:00:01 GMT</pubDate>
+            <description><![CDATA[EthStaker is proud to announce that we will be taking over maintenance of Rated's solo staker list. We believe identifying solo stakers is important for monitoring the health of the network and useful for second order incentives such as airdrops. Rated recently published their last update up to validator index 1,500,000. EthStaker's first update is planned for July 1st, 2025 using Rated's methodology. After this point we expect to update the list quarterly. The solo staker list will be publis...]]></description>
+            <content:encoded><![CDATA[<p>EthStaker is proud to announce that we will be taking over maintenance of Rated's solo staker list. We believe identifying solo stakers is important for monitoring the health of the network and useful for second order incentives such as airdrops.</p><p>Rated recently published their last update up to validator index 1,500,000. EthStaker's first update is planned for July 1st, 2025 using <a target="_blank" rel="nofollow" class="dont-break-out" href="https://blog.rated.network/blog/solo-stakers"><u>Rated's methodology</u></a>. After this point we expect to update the list quarterly. The solo staker list will be published on <a target="_blank" rel="noopener noreferrer nofollow ugc" class="dont-break-out" href="https://github.com/eth-educators/solo-stakers"><u>EthStaker's GitHub</u></a>.</p><p>EthStaker's <a target="_blank" rel="nofollow" class="dont-break-out" href="https://ethstaker.org/solo-staker-list"><u>Solo Staker List</u></a> page has a list of historical versions, a search to check if your address is included, and a link to file a petition if needed.</p>]]></content:encoded>
+            <author>ethstaker@newsletter.paragraph.xyz (nixo)</author>
+        </item>
         <item>
             <title><![CDATA[Staking Bandwidth Survey - Fall 2024]]></title>
             <link>https://paragraph.xyz/@ethstaker/staking-bandwidth-survey-fall-2024</link>
