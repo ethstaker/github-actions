@@ -4,7 +4,7 @@
         <title>ethstaker</title>
         <link>https://paragraph.xyz/@ethstaker</link>
         <description>Ethereum staking info &amp; education </description>
-        <lastBuildDate>Fri, 21 Mar 2025 00:47:52 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 22 Mar 2025 00:47:49 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -14,6 +14,18 @@
             <link>https://paragraph.xyz/@ethstaker</link>
         </image>
         <copyright>All rights reserved</copyright>
+        <item>
+            <title><![CDATA[Now Open: 2025 Staking Landscape Survey]]></title>
+            <link>https://paragraph.xyz/@ethstaker/2025-staking-landscape-survey</link>
+            <guid>J5HBPp5c4knUbehMpoUr</guid>
+            <pubDate>Fri, 21 Mar 2025 16:29:35 GMT</pubDate>
+            <description><![CDATA[The 2025 Staking Landscape Survey from EthStaker is now open! Fill it out here. The survey collects a snapshot of the staking landscape and community sentiment. It also shows where advocacy efforts are making an impact or are needed. Most sensitive questions are optional, so you can leave them blank if you prefer. Note that this survey is for anyone to fill out, even non-stakers. Anonymized results data and analysis will be published and open sourced. See past EthStaker survey raw data here a...]]></description>
+            <content:encoded><![CDATA[<p>The 2025 Staking Landscape Survey from EthStaker is now open! <a target="_blank" rel="noopener noreferrer nofollow ugc" class="dont-break-out" href="https://ethstaker.org/forms/staking-landscape-survey-2025">Fill it out here</a>.</p><p>The survey collects a snapshot of the staking landscape and community sentiment. It also shows where advocacy efforts are making an impact or are needed. Most sensitive questions are optional, so you can leave them blank if you prefer.</p><p>Note that this survey is for <em>anyone</em> to fill out, even non-stakers.</p><p>Anonymized results data and analysis will be published and open sourced. </p><p>See <a target="_blank" rel="noopener noreferrer nofollow ugc" class="dont-break-out" href="https://github.com/eth-educators/staking-survey-data/tree/main">past EthStaker survey raw data here</a> and <a target="_blank" rel="noopener noreferrer nofollow ugc" class="dont-break-out" href="https://paragraph.xyz/@ethstaker/staking-survey-2024">past survey analysis here</a>. </p><p>Thank you for sharing this around, filling it out, and helping collect a current picture of the staking ecosystem. </p>]]></content:encoded>
+            <author>ethstaker@newsletter.paragraph.xyz (nixo)</author>
+            <category>survey</category>
+            <category>announcement</category>
+            <category>community</category>
+        </item>
         <item>
             <title><![CDATA[Ethereum Solo Staker List Handover to EthStaker]]></title>
             <link>https://paragraph.xyz/@ethstaker/ethereum-solo-staker-list-handover-to-ethstaker</link>
@@ -388,21 +400,6 @@
             <category>cryptocurrency</category>
             <category>staking</category>
             <enclosure url="https://storage.googleapis.com/papyrus_images/6ee554d54780c856d713c5461bbe395a.png" length="0" type="image/png"/>
-        </item>
-        <item>
-            <title><![CDATA[A Beginner’s Guide to Staking - Intro]]></title>
-            <link>https://paragraph.xyz/@ethstaker/a-beginners-guide-to-staking-intro</link>
-            <guid>ky73YljDRSQCdz41RN9k</guid>
-            <pubDate>Thu, 27 Apr 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[I’ve decided to write a beginner’s guide to Ethereum staking. It’s meant to target people who are kind of interested in crypto, but not quite sure what Ethereum really is or why you’d want to stake. It’ll be as accessible as I can manage and come out in six parts twice a week:What is Ethereum?What is a validator?How staking stays healthy long-term (and how your choices help)Broad overview of some issues that Ethereum staking faces todayFactors that should play into your decision to stake or n...]]></description>
-            <content:encoded><![CDATA[<p>I’ve decided to write a beginner’s guide to Ethereum staking. It’s meant to target people who are <em>kind of</em> interested in crypto, but not quite sure what Ethereum really is or why you’d want to stake. It’ll be as accessible as I can manage and come out in six parts twice a week:</p><ul><li><p><a target="_blank" rel="noopener noreferrer nofollow ugc" class="dont-break-out" href="https://paragraph.xyz/@ethstaker/staking-beginners-p1">What is Ethereum?</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow ugc" class="dont-break-out" href="https://paragraph.xyz/@ethstaker/staking-beginners-p2">What is a validator?</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow ugc" class="dont-break-out" href="https://paragraph.xyz/@ethstaker/staking-beginners-p3">How staking stays healthy long-term (and how your choices help)</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow ugc" class="dont-break-out" href="https://paragraph.xyz/@ethstaker/staking-beginners-p4">Broad overview of some issues that Ethereum staking faces today</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow ugc" class="dont-break-out" href="https://paragraph.xyz/@ethstaker/staking-beginners-p5">Factors that should play into your decision to stake or not</a></p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow ugc" class="dont-break-out" href="https://paragraph.xyz/@ethstaker/staking-beginners-p6">Finding your best way to stake</a></p></li></ul><p>Each section should take 15 minutes or less to read and will be accompanied by some links to learn more. This is meant to make you feel culturally oriented in the staking community before you dive into a technical guide.</p><p>If you find any technical inaccuracies in these posts, please DM me on twitter and let me know before I get roasted by the entire internet: <a target="_blank" rel="noopener noreferrer nofollow ugc" class="dont-break-out" href="http://twitter.com/nixorokish">twitter.com/nixorokish</a></p>]]></content:encoded>
-            <author>ethstaker@newsletter.paragraph.xyz (nixo)</author>
-            <category>web3</category>
-            <category>cryptocurrency</category>
-            <category>staking</category>
-            <category>blockchain</category>
-            <category>ethereum</category>
-            <category>beginner</category>
         </item>
     </channel>
 </rss>
