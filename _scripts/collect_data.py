@@ -8,10 +8,10 @@ from for_hire_listings import update_for_hire_listings
 
 
 def run_app():
-  update_smoothing_pool_data()
+  # update_smoothing_pool_data()
   check_hardware_availability()
   update_blog_feed()
-  update_job_listings()
+  # update_job_listings()
   # update_for_hire_listings()
 
 
